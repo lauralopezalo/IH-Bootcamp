@@ -1,0 +1,74 @@
+:root {
+  --main-bg-color: teal;
+  --secondary-bg-color: rgb(23, 185, 185);
+  --text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.hamburger-menu {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  position: relative;
+  min-height: 50px;
+}
+
+a {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  max-width: 200px;
+}
+
+input[type="checkbox"],
+.fa-bars,
+.fa-times {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 40px;
+  height: 40px;
+}
+
+.fa-bars,
+.fa-times {
+  font-size: 40px;
+  pointer-events: none;
+}
+
+ul {
+  border: 6px solid var(--main-bg-color);
+}
+
+li {
+  list-style-type: none;
+  border-bottom: 4px solid var(--main-bg-color);
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+nav {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ nav {
+  display: block;
+}
+
+input[type="checkbox"]:checked ~ .fa-bars {
+  display: none;
+}
+
+input[type="checkbox"]:not(:checked) ~ .fa-times {
+  display: none;
+}
